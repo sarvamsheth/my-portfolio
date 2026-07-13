@@ -1764,58 +1764,58 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
       Back to Projects
     </button>
-    <span class="pmod-num">04 · Open Source</span>
+    <span class="pmod-num">04</span>
   </div>
   <div class="pmod-hero-img">
-    <!-- TO ADD: <img src="images/p4-hero.jpg" alt="ML Inference"> -->
+    <img src="planter.png" alt="ML Inference">
     <div class="pmod-img-ph">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
       <span>Hero Image</span><small>1600 × 700px recommended</small>
     </div>
   </div>
   <div class="pmod-body">
-    <h2 class="pmod-title">ML Inference Serving Engine</h2>
+    <h2 class="pmod-title">Children's Educational Planter</h2>
     <div class="pmod-tags">
-      <span class="tag">Python</span><span class="tag">CUDA</span><span class="tag">Triton</span><span class="tag">FastAPI</span><span class="tag">Docker</span>
+      <span class="tag">Arduino</span><span class="tag">Sensor Selection</span><span class="tag">Wiring</span><span class="tag">3D Printing</span>
     </div>
     <div class="pmod-meta">
-      <div class="pmod-meta-item"><div class="pmod-meta-label">Timeline</div><div class="pmod-meta-val">4 months</div></div>
-      <div class="pmod-meta-item"><div class="pmod-meta-label">Role</div><div class="pmod-meta-val">Lead Author</div></div>
-      <div class="pmod-meta-item"><div class="pmod-meta-label">GPU Savings</div><div class="pmod-meta-val">~40% cost</div></div>
+      <div class="pmod-meta-item"><div class="pmod-meta-label">Role</div><div class="pmod-meta-val">Lead Engineer</div></div>
+      <div class="pmod-meta-item"><div class="pmod-meta-label">Timeline</div><div class="pmod-meta-val">1 month</div></div>
+      <div class="pmod-meta-item"><div class="pmod-meta-label">Category</div><div class="pmod-meta-val">Sustainability</div></div>
     </div>
     <div class="pmod-section">
       <div class="pmod-section-title">Overview</div>
       <div class="pmod-text">
-        <p>A high-throughput ML model serving layer designed to maximise GPU utilisation in production. The engine dynamically batches incoming inference requests, applies hardware-aware quantisation, and routes traffic across model versions for A/B experiments.</p>
-        <p>Open-sourced after internal deployment and adopted by several teams for serving transformer-based models at scale.</p>
+        <p>For my GEEN 1400 project for our sustainability topic, my group decided to create a educational planter for children, designed to be user friendly whilst teaching kids the important of sustainable gardening practices</p>
+        <p>The project utilized a screen to display fun graphics based on the plant's soil moisture content using a moisture sensor, running off an Arduino Leonardo. If the soil moisture was too low or high, a sad face was displayed, and if it was just right, a smiley face would show.</p>
       </div>
     </div>
     <div class="pmod-section">
-      <div class="pmod-section-title">Performance</div>
+      <div class="pmod-section-title">Images</div>
       <div class="pmod-img-grid">
         <div>
           <div class="pmod-inline-img">
-            <!-- TO ADD: <img src="images/p4-throughput.jpg" alt="Throughput"> -->
+            <img src="PlanterShield.jpg" alt="Shield">
             <div class="pmod-img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg><span>Throughput Chart</span></div>
           </div>
-          <p class="pmod-img-cap">Requests/sec vs batch size</p>
+          <p class="pmod-img-cap">Organized Arduino Shield</p>
         </div>
         <div>
           <div class="pmod-inline-img">
-            <!-- TO ADD: <img src="images/p4-cost.jpg" alt="Cost comparison"> -->
+            <img src="PlanterScreen.jpg" alt="Screen">
             <div class="pmod-img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><span>Cost Comparison</span></div>
           </div>
-          <p class="pmod-img-cap">GPU cost vs naive serving</p>
+          <p class="pmod-img-cap">Graphics on Screen</p>
         </div>
       </div>
     </div>
     <div class="pmod-section">
-      <div class="pmod-section-title">Key Features</div>
+      <div class="pmod-section-title">Design Considerations</div>
       <ul class="pmod-bullets">
-        <li>Dynamic batching with configurable latency budget — collects requests for up to N ms before dispatching a fused GPU kernel call.</li>
-        <li>INT8 and FP16 quantisation with automatic calibration, reducing GPU memory footprint 2–4× with negligible accuracy loss.</li>
-        <li>A/B routing with configurable traffic splits and per-variant telemetry.</li>
-        <li>Triton Inference Server backend with a FastAPI facade for clean REST and gRPC interfaces.</li>
+        <li>Have an approachable design for kids, including bright colors and fun graphics.</li>
+        <li>Be able to communicate soil moisture and plant health to user.</li>
+        <li>Easily manufacturable for mass production. Be resist to drops and rough handling that a preschooler would do.</li>
+        <li>Utilize a plant light to help photosynthesis in classrooms with UV protected windows.</li>
       </ul>
 </body>
 </html>
