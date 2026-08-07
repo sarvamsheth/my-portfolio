@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sarvam Sheth — Engineering Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo" onclick="location.href='index.html'">Sarvam Sheth</span>
+  <ul class="nav-links">
+    <li><button onclick="location.href='index.html'" id="nav-index" class="active">Home</button></li>
+    <li><button onclick="location.href='projects.html'" id="nav-projects">Projects</button></li>
+    <li><button onclick="location.href='skills.html'" id="nav-skills">Skills</button></li>
+    <li><button onclick="location.href='experience.html'" id="nav-experience">Experience</button></li>
+    <li><button onclick="location.href='contact.html'" id="nav-contact">Contact</button></li>
+  </ul>
+</nav>
+
+<div class="page active" id="page-home">
+
+  <!-- Wrapper is taller than viewport — gives scroll room for sticky hero -->
+  <div class="hero-wrapper">
+    <div class="hero-fullbg" id="hero-sticky">
+
+      <!-- BACKGROUND IMAGE — replace placeholder with your photo -->
+      <div class="hero-bg-img">
+        <!--
+          TO ADD YOUR PHOTO:
+          Replace the entire .hero-bg-placeholder div below with:
+          <img src="your-photo.jpg" alt="Sarvam Sheth">
+        -->
+        <img src="bikeShort.jpg" alt="Sarvam Sheth">
+      </div>
+
+      <!-- Gradient fade — appears on scroll -->
+      <div class="hero-fade"></div>
+
+      <!-- Text content — appears on scroll -->
+      <div class="hero-content">
+        <h1 class="hero-title">Hi, I'm<br><em>Sarvam Sheth</em></h1>
+        <p class="hero-bio">
+          I design reliable engineering solutions for both aviation and 
+          space exploration, solutions that hold up under real-world constraints. 
+          I'm seeking work that pushes my skills, collaborates with like-minded engineers, 
+          and challenges my diciplined problem-solving.
+          <br>
+          <br>
+          My goal is to design drones and aircraft to aid transportation of cargo and people on Mars,
+          expediting interplanetary colonization.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-solid" onclick="location.href='projects.html'">View My Work</button>
+          <button class="btn btn-outline" onclick="location.href='contact.html'">Get in Touch</button>
+        </div>
+      </div>
+
+      <div class="hero-scroll-hint" id="hero-scroll-hint">Scroll</div>
+    </div>
+  </div><!-- /hero-wrapper -->
+
+  <!-- About band — slides in from sides -->
+  <div class="home-about" id="home-about">
+    <div class="home-about-inner">
+      <div class="about-slide-left">
+        <p class="section-eyebrow">About Me</p>
+        <h2 class="page-title" style="margin-bottom:1.8rem">Building <br>the <em>future.</em></h2>
+        <div class="about-body">
+          <p>
+            I'm an aerospace student/engineer with years of experience spanning composites manufacturing,
+            robotics subsystems, and aircraft mechanics. I approach every problem with
+            determination, curiosity, and passion for what I work on.
+          </p>
+          <p> 
+            Currently looking for engineering intern roles in aerospace/mechanical engineering, and manufacturing.
+          </p>
+        </div>
+        <div style="margin-top:2.2rem">
+          <a class="btn btn-ghost" href="Sarvam Sheth Resume - Aero.pdf">Download Resume →</a>
+        </div>
+      </div>
+      <div class="about-slide-right">
+        <p class="section-eyebrow">Currently Studying At</p>
+        <h2 class="page-title" style="margin-bottom:1.8rem">CU Boulder</h2>
+        <div class="about-body">
+          <p>
+            I'm a junior studying Aerospace Engineering at the University of Colorado Boulder,
+            pursuing a degree that bridges the gap between space exploration and aeronautics.
+          <br>
+            Outside the classroom, I'm active in Formula SAE, undergraduate research, and aircraft design.
+            
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /home -->
+
+
+<footer>
+  <span>Sarvam Sheth &middot; Engineering Portfolio</span>
+  <span>Built with HTML</span>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

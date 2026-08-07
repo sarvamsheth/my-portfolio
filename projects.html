@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects — Sarvam Sheth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo" onclick="location.href='index.html'">Sarvam Sheth</span>
+  <ul class="nav-links">
+    <li><button onclick="location.href='index.html'" id="nav-index">Home</button></li>
+    <li><button onclick="location.href='projects.html'" id="nav-projects" class="active">Projects</button></li>
+    <li><button onclick="location.href='skills.html'" id="nav-skills">Skills</button></li>
+    <li><button onclick="location.href='experience.html'" id="nav-experience">Experience</button></li>
+    <li><button onclick="location.href='contact.html'" id="nav-contact">Contact</button></li>
+  </ul>
+</nav>
+
+<div class="page active" id="page-projects">
+  <div class="page-header">
+    <p class="section-eyebrow">Selected Work</p>
+    <h2 class="page-title">Projects</h2>
+  </div>
+
+  <div class="projects-list">
+
+    <div class="project-item flip">
+      <div class="proj-img-wrap proj-slide-right">
+          <img src="glider.jpg" alt="Glider">
+        <div class="proj-img-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/>
+          </svg>
+          <span>Project Image</span>
+          <small>560 × 420px recommended</small>
+        </div>
+      </div>
+      <div class="proj-content proj-slide-left">
+        <div class="proj-num">01 · ASEN 2502</div>
+        <h3 class="proj-title">Foam Glider</h3>
+        <p class="proj-desc">
+          Designed a low drag foam glider to aim for the longest glide distance from the fourth-floor balcony of
+          the Aerospace Building. Utilized a stepped airfoil design to reduce skin friction across the main wing.
+        </p>
+        <div class="proj-tags">
+          <span class="tag">SimScale</span><span class="tag">Manufacturing</span>
+          <span class="tag">Group Project</span>
+        </div>
+        <button class="proj-link" onclick="openProject('p0')">View Project →</button>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div class="proj-img-wrap proj-slide-left">
+          <img src="rake.png" alt="windrake">
+        <div class="proj-img-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+          <span>Project Image</span>
+          <small>560 × 420px recommended</small>
+        </div>
+      </div>
+      <div class="proj-content proj-slide-right">
+        <div class="proj-num">02 · Buffs Racing</div>
+        <h3 class="proj-title">Pressure Sensor Array</h3>
+        <p class="proj-desc">
+          A 16-sensor pressure sensor that measures the pressure on the front of our car's 
+          radiator and create a pressure gradient. This allows us to verify the prosoity of 
+          the radiator and enable accurate CFD for our new sidepod.
+        </p>
+        <div class="proj-tags">
+          <span class="tag">LabView</span><span class="tag">MatLAB</span>
+          <span class="tag">NI cDAQ</span><span class="tag">Wiring</span>
+        </div>
+        <button class="proj-link" onclick="openProject('p1')">View Project →</button>
+      </div>
+    </div>
+
+    <div class="project-item flip">
+      <div class="proj-img-wrap proj-slide-right">
+          <img src="globe.png" alt="Matlab Sim">
+        <div class="proj-img-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/>
+          </svg>
+          <span>Project Image</span>
+          <small>560 × 420px recommended</small>
+        </div>
+      </div>
+      <div class="proj-content proj-slide-left">
+        <div class="proj-num">03 · Undergraduate Research</div>
+        <h3 class="proj-title">Gravity Anomaly Detection Satellite</h3>
+        <p class="proj-desc">
+          Designing next GRACE satellite mission to utilize time dilation 
+          of atomics clocks to accurately measure gravity changes around the globe 
+          and replace current laser-ranging technology for 2032.
+        </p>
+        <div class="proj-tags">
+          <span class="tag">MatLAB</span><span class="tag">Astrophysics</span>
+          <span class="tag">GROOPS</span>
+        </div>
+        <button class="proj-link" onclick="openProject('p2')">View Project →</button>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div class="proj-img-wrap proj-slide-left">
+          <img src="robot.jpg" alt="2023 Robot">
+        <div class="proj-img-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+          <span>Project Image</span>
+          <small>560 × 420px recommended</small>
+        </div>
+      </div>
+      <div class="proj-content proj-slide-right">
+        <div class="proj-num">04 · FRC Robotics</div>
+        <h3 class="proj-title">2023 Season Robot</h3>
+        <p class="proj-desc">
+          Led development of short-time extension telescoping arm, multi-gamepiece intake, 
+          and robust A-frame to maximize scoring potential while prioritizing 
+          manufacturability and ease-of-repair.
+        </p>
+        <div class="proj-tags">
+          <span class="tag">CAD</span><span class="tag">FEA</span>
+          <span class="tag">Machining</span><span class="tag">3D Printing</span>
+        </div>
+        <button class="proj-link" onclick="openProject('p3')">View Project →</button>
+      </div>
+    </div>
+
+    <div class="project-item flip">
+      <div class="proj-img-wrap proj-slide-right">
+          <img src="planter.png" alt="Planter">
+        <div class="proj-img-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <path d="M8 21h8M12 17v4"/>
+          </svg>
+          <span>Project Image</span>
+          <small>560 × 420px recommended</small>
+        </div>
+      </div>
+      <div class="proj-content proj-slide-left">
+        <div class="proj-num">05 · GEEN 1400 Project</div>
+        <h3 class="proj-title">Children's Interactive Planter</h3>
+        <p class="proj-desc">
+          Desiged an interactive planter to encourage good-gardening 
+          practices and teach children the significance of climate change 
+          using fun-graphics based on soil moisture level.
+        </p>
+        <div class="proj-tags">
+          <span class="tag">Arduino</span><span class="tag">Sensor</span>
+          <span class="tag">Wiring</span><span class="tag">3D Printing</span>
+        </div>
+        <button class="proj-link" onclick="openProject('p4')">View Project →</button>
+      </div>
+    </div>
+
+  </div>
+</div><!-- /projects -->
+
+
+
+<footer>
+  <span>Sarvam Sheth &middot; Engineering Portfolio</span>
+  <span>Built with HTML</span>
+</footer>
+
+<div class="proj-modal-backdrop" id="modal-backdrop" onclick="closeProject()"></div>
+
+<!-- PROJECT 0 -->
+<div class="proj-modal" id="modal-p0">
+  <div class="pmod-header">
+    <button class="pmod-back" onclick="closeProject()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+      Back to Projects
+    </button>
+    <span class="pmod-num">01 · Featured</span>
+  </div>
+  <div class="pmod-hero-img">
+     <img src="glider.jpg" alt="Glider">
+    <div class="pmod-img-ph">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    </div>
+  </div>
+  <div class="pmod-body">
+    <h2 class="pmod-title">Foam Glider</h2>
+    <div class="pmod-tags">
+      <span class="tag">CFD</span><span class="tag">Simscale</span><span class="tag">MATLAB</span>
+    </div>
+    <div class="pmod-meta">
+      <div class="pmod-meta-item"><div class="pmod-meta-label">Timeline</div><div class="pmod-meta-val">1 month</div></div>
+      <div class="pmod-meta-item"><div class="pmod-meta-label">Role</div><div class="pmod-meta-val">Lead Engineer</div></div>
+    </div>
+    <div class="pmod-section">
+      <div class="pmod-section-title">Overview</div>
+      <div class="pmod-text">
+        <p>Using provided materials and a tight timeframe, I was able to design and fly a foam glider built from scratch, using primarily foam board, hot glue, and some rubber bands.</p>
+        <p>Our goal was to fly the farthest distance from being launched from the fourth floor of our aerospace building, and acheived a class record distance of 89 meters</p>
+      </div>
+    </div>
+    <div class="pmod-section">
+      <div class="pmod-section">
+      <div class="pmod-section-title">Images</div>
+      <div class="pmod-img-grid">
+        <div>
+          <div class="pmod-inline-img">
+            <img src="groupphoto.jpg" alt="Photo">
+          </div>
+          <p class="pmod-img-cap">Photo of members</p>
+        </div>
+        <div>
+          <div class="pmod-inline-img">
+            <img src="cfd.jpg" alt="CFD">
+          </div>
+          <p class="pmod-img-cap">CFD Simulation</p>
+        </div>
+      </div>
+    </div>
+      <div class="pmod-text">
+        <p>For our Intro to Aeronautics project, we were tasked with designing and building a foam glider
+          using provided materials such as foam board, pink foam, hot glue, and a razer. The goal was to 
+          be able to hold a camera/dummy weight and glide the longest distance after launching from the top
+          of our aerospace building. </p>
+
+          <p>Most teams decided to use the pink foam and CNC cut airfoil shapes like majority of previous teams using the
+          machine provided by the professors. Professors recommened to just use a flat-plate wing using a single piece
+          of foam board. However, we wanted to do something different. </p>
+
+          <p>After researching from multiple sources, a YouTube video came up demonstrating a stepped-airfoil, a double layered
+          foam-board wing with a curved front. While air travels around a normal airfoil, the step of a stepped-airfoil
+          creates a pocket of air, which then surrounding air travels over, reducing skin friction and thus decreasing
+          overall drag, yet acting like a normal airfoil. </p>
+
+          <p>I took on the role of verifying these airfoils in CFD by running simulations with different chord lengths,
+          step heights, and curved edges, finally settling on the one shown above. You can see that the blue region 
+          resembles that of a traditional airfoil, yet the actual airfoil profile is much smaller. Additionally, we aimed
+          to make the dark blue region not collide with the airfoil to reduce drag, but noticed our lift decreased due to less air
+          contacting the bottom side of the wing as part of the lift force. </p>
+
+          <p>After verifying this in CFD, we ultimately compared a flat-plate wing, a NACA 4412 wing, 
+          and the stepped-airfoil wing of the same planform areas. Throwing the glider multiple times, 
+          we determined that the stepped-airfoil and flat-plate wing performed much better 
+          than the NACA 4412 in the same conditions. We also took note that the stepped-airfoil performed better in windy conditions
+          compared to the flat-plate airfoil. This was crucial in our record-setting flight by constantly switching out the airfoil based
+          on wind conditions, which almost no team took note of. The use of rubber bands made this process easy.
+          Our record of 83m came from our stepped airfoil with a decent headwind, stunning our professors who thought this idea
+          would not work at all. </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- PROJECT 1 -->
+<div class="proj-modal" id="modal-p1">
+  <div class="pmod-header">
+    <button class="pmod-back" onclick="closeProject()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+      Back to Projects
+    </button>
+    <span class="pmod-num">01 · Featured</span>
+  </div>
+  <div class="pmod-hero-img">
+     <img src="rake.png" alt="Wing Rake">
+    <div class="pmod-img-ph">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    </div>
+  </div>
+  <div class="pmod-body">
+    <h2 class="pmod-title">Pressure Sensor Array</h2>
+    <div class="pmod-tags">
+      <span class="tag">CFD</span><span class="tag">LabView</span><span class="tag">MATLAB</span><span class="tag">NI cDAQ</span><span class="tag">Wiring</span>
+    </div>
+    <div class="pmod-meta">
+      <div class="pmod-meta-item"><div class="pmod-meta-label">Timeline</div><div class="pmod-meta-val">3 months</div></div>
+      <div class="pmod-meta-item"><div class="pmod-meta-label">Role</div><div class="pmod-meta-val">Lead Engineer</div></div>
+    </div>
+    <div class="pmod-section">
+      <div class="pmod-section-title">Overview</div>
+      <div class="pmod-text">
+        <p>With assistance from my team, I created a 16 pressure sensor array used to create a pressure map of the front of our car's radiator. This was needed in order to create a realistic model of our radiator in CFD for our sidepod design.  </p>
+        <p>I designed the setup from scratch, led a team of engineers, created the PCB design, selected the appropriate sensors, and set up the entire system before our planned testing day.</p>
+      </div>
+    </div>
+    <div class="pmod-section">
+      <div class="pmod-section">
+      <div class="pmod-section-title">Images</div>
+      <div class="pmod-img-grid">
+        <div>
+          <div class="pmod-inline-img">
+            <!-- TO ADD: <img src="images/p1-dash.jpg" alt="Dashboard"> -->
+            <div class="pmod-img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="14" rx="1"/><path d="M8 21h8M12 17v4"/></svg><span>Screenshot 1</span></div>
+          </div>
+          <p class="pmod-img-cap">Live dashboard</p>
+        </div>
+        <div>
+          <div class="pmod-inline-img">
+            <!-- TO ADD: <img src="images/p1-metrics.jpg" alt="Metrics"> -->
+            <div class="pmod-img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg><span>Screenshot 2</span></div>
+          </div>
+          <p class="pmod-img-cap">Latency metrics</p>
+        </div>
+      </div>
+    </div>
+      <div class="pmod-text">
+        <p>Since our Formula SAE car never utilized sidepods before,
+          we had to collect data in order to determine the porosity of our 
+          radiator, as that information was not readily available. This was 
+          crucial to verifying our CFD simulations in order to optimize the 
+          sidepod shroud. My goal was to use pressure sensors in a grid-pattern 
+          to measure the differential pressure at different points in front of 
+          the radiator, kind of how a pitot tube and static port work on a plane. <br>
+
+          My teammate and I went through the development of a 3d printed grid, 
+          with 32 brass tubes, 16 pairs for 16 sensors. The sensors we used 
+          were 7391-BCE-S-005-000 differential pressure sensors, each with two 
+          inputs, one for ram air pressure and the other for static pressure. 
+          The static pressure tube was blocked on the end with holes drilled on 
+          the sides to act like static ports. This gave the pressure difference 
+          between the ambient pressure and the pressure received by the radiator 
+          based on the speed of the car, as ram-pressure increased with speed. <br>
+
+          The biggest challenge was integrating the sensors with a brand 
+          new DAQ computer that we had never tested. I had to learn LabVIEW on-the-go 
+          from scratch using National Instruments' modules and controllers. I was able 
+          to get it running with only hours to spare as it was a last minute decision 
+          to switch, but it turned out to be a huge success. <br>
+
+          We took CB6 to Colorado National Speedway, where we conducted straight-line 
+          speed tests, both with the wind rake in front and then behind the radiator. 
+          The wind-rake melted on our last test, but we were able to collect valuable 
+          data and ultimately determine the porosity of the radiator. We will now go 
+          on to finalize the sidepod design and begin manufacturing in the spring.</p>
+      </div>
+    </div>
+    <div class="pmod-section">
+      <div class="pmod-section-title">Key Challenges</div>
+      <ul class="pmod-bullets">
+        <li>Shifting from Arduino setup to NI cDAQ setup in a single day.</li>
+        <li>Tubes from sensors to inlets were not as bendable as hopes, so the array was offset a few inches from the front of the radiator</li>
+        <li>Harder for array to mount on the rear due to large tubes, so metal brackets were extended and can be flipped to the rear.</li>
+      </ul>
+    </div>
+    <div class="pmod-section">
+      <div class="pmod-section-title">Procedures + Outcomes</div>
+      <ul class="pmod-bullets">
+        <li>Collected pressure data for three constant speeds by redlining up to 3rd gear.</li>
+        <li>Straight line, skidpad, S-turn, and Shalom courses driven.</li>
+        <li>Data was inputted into MATLAB to create pressure maps of front and rear faces of the radiator.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECT 2 -->
+<div class="proj-modal" id="modal-p2">
+  <div class="pmod-header">
+    <button class="pmod-back" onclick="closeProject()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+      Back to Projects
+    </button>
+    <span class="pmod-num">02</span>
+  </div>
+  <div class="pmod-hero-img">
+    <img src="multiorbit.png" alt="Config System">
+    <div class="pmod-img-ph">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+    </div>
+  </div>
+  <div class="pmod-body">
+    <h2 class="pmod-title">Gravity Anomaly Detection Satellite</h2>
+    <div class="pmod-tags">
+      <span class="tag">MATLAB</span><span class="tag">ASTROPHYSICS</span><span class="tag">GROOPS</span>
+    </div>
+    <div class="pmod-meta">
+      <div class="pmod-meta-item"><div class="pmod-meta-label">Timeline</div><div class="pmod-meta-val">Continuous</div></div>
+      <div class="pmod-meta-item"><div class="pmod-meta-label">Role</div><div class="pmod-meta-val">Sole Author</div></div>
+    </div>
+    <div class="pmod-section">
+      <div class="pmod-section-title">Overview</div>
+      <div class="pmod-text">
+        <p>Using previously obtained GRACE Satellite data, I'm developing a new design of gravity anomaly detection to predict and monitor climate change impacts.
+          The design utilizes a single satellite with an atomic clock to precisely measure gravity changes based on time relativistic data, working off Einstein's theory of relativity.
+          Current GRACE satellite missions consists of two satellites measuring distance changes due to gravity using laser-ranging and microwave-ranging technology, 
+          which is slightly outdated and satellites take time to accelerate, delaying the gravity measurement. Time change is nearly instantaenous and is far mroe accurate, allowing for high-degree data.
+        </p>
+        <p>
+          I am currently working on a MATLAB script to recreate GRACE satellite orbits to visualize how the frequency of atomic 
+          clocks change due to gravity data. This will allow for proof of concept while I write a paper on future designs and 
+          what technology will be required.
+        </p>
+      </div>
+    </div>
+    <div class="pmod-section">
+      <div class="pmod-section-title">Technical Detail</div>
+      <div class="pmod-text">
+        <p>Current GRACE satellite utilize distance montoring between two satellites to measure gravity changes across the globe.
+          By using laser-ranging technology, the satellites can measure changes in distances down to a micrometer. However, the delay
+          the satellites to move from each other and the cost manfuacturing two satellites begs the question if there is an alternative.
+
+          I am currently working on a new design to implement a singular satellite GRACE missions using time dilation to measure gravity changes.
+          By using atomic clocks, gravity changes can be measured instantaneously, reducing operational cost and manfuacturing and launch cost.
+          This would also give far more details models of the Earth's gravitational field with the same overall goal of monnitoring and predicting
+          climate change effects such as ice sheet mass shifts and sea level rise.
+
+          Currently I am developing MATLAB simulatiosn to accurately showcase how atomic clock frequency would change based on 
+          previously collected GRACE satellite data. By doing this, I can get a more clear idea how effective the method is and how timing
+          errors are affected using thiss method. Additionally, it provides visuals for those learning about such missions, as well as having
+          a comparison to current models. This project is a continous project that I hope to finish before I complete my undergrad.
+        </p>
+      </div>
+    </div>
+    <div class="pmod-section">
+      <div class="pmod-section-title">Key Features</div>
+      <ul class="pmod-bullets">
+        <li>Variable orbital element implentation, displaying orbital path with colormap to display frequency change across
+          any orbit.
+        </li>
+        <li>Specifies locations of increase frequency change of atomic clocks based on any GRACE data model.</li>
+        <li>Fully tunable for any dataset, color map, or choose between gravtational map or frequency map.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECT 3 -->
+<div class="proj-modal" id="modal-p3">
+  <div class="pmod-header">
+    <button class="pmod-back" onclick="closeProject()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+      Back to Projects
+    </button>
+    <span class="pmod-num">03</span>
+  </div>
+  <div class="pmod-hero-img">
+   <img src="robot.jpg" alt="OTA Firmware">
+    <div class="pmod-img-ph">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    </div>
+  </div>
+  <div class="pmod-body">
+    <h2 class="pmod-title">2023 FRC Robot</h2>
+    <div class="pmod-tags">
+      <span class="tag">CAD</span><span class="tag">FEA</span><span class="tag">3D Printing</span><span class="tag">Manufacturing</span>
+    </div>
+    <div class="pmod-meta">
+      <div class="pmod-meta-item"><div class="pmod-meta-label">Role</div><div class="pmod-meta-val">Design Captain</div></div>
+      <div class="pmod-meta-item"><div class="pmod-meta-label">Timeline</div><div class="pmod-meta-val">4 months</div></div>
+      <div class="pmod-meta-item"><div class="pmod-meta-label">Game Type</div><div class="pmod-meta-val">Placement</div></div>
+    </div>
+    <div class="pmod-section">
+      <div class="pmod-section-title">Overview</div>
+      <div class="pmod-text">
+        <p>The 2023 FRC Game, "Charged Up", consisted of placing cones and inflatable cubes onto poles and shelves respectivally, earning points
+          by creating rows of pieces alongside two other teams to make up an alliance, competing against another alliance with the same exact goal.
+          At the end, the teams have to balance on a platform to earn a large sum of points. </p>
+
+        <p>As Design Captain, I oversaw all design aspects of the robot, from initial brainstorming to final drawings and manufacturing. 
+          I focussed on majority of the telescoping arm, which I designed from scratch to fit our two main goals: strength and rapid-extension.
+          Strength allows us to make quick movements without worring about fatigue, and rapid-extension in order to score points faster than other 
+          teams, a huge selling point if being picked by other teams for an alliance. 
+        </p>
+
+      </div>
+    </div>
+    <div class="pmod-section">
+      <div class="pmod-section-title">Design Considerations</div>
+      <ul class="pmod-bullets">
+        <li>Used a leadscrew to achiece full extension under a second, much faster compared to traditional elevator designs.</li>
+        <li>Single end-effector with two intakes: one for the cones and one for cubes, simplifying design.</li>
+        <li>First iteration fo swerve drive from our previous tank-drive designs to allow fast offense capabilities.</li>
+        <li>3D printed more parts compared to previous years to lighten robot weight and produce parts more rapidly.</li>
+      </ul>
+    </div>
+    <div class="pmod-section">
+      <div class="pmod-section-title">Photos</div>
+      <div class="pmod-img-grid">
+        <div>
+          <div class="pmod-inline-img">
+            <img src="ArmDrawing.png" alt="Dev board">
+            <div class="pmod-img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg><span>Hardware Photo</span></div>
+          </div>
+          <p class="pmod-img-cap">Telescoping Arm Drawing</p>
+        </div>
+        <div>
+          <div class="pmod-inline-img">
+            <img src="IntakePrototype.jpg" alt="Test rig">
+            <div class="pmod-img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Test Rig</span></div>
+          </div>
+          <p class="pmod-img-cap">Prototyping Intake</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECT 4 -->
+<div class="proj-modal" id="modal-p4">
+  <div class="pmod-header">
+    <button class="pmod-back" onclick="closeProject()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+      Back to Projects
+    </button>
+    <span class="pmod-num">04</span>
+  </div>
+  <div class="pmod-hero-img">
+    <img src="planter.png" alt="ML Inference">
+    <div class="pmod-img-ph">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      <span>Hero Image</span><small>1600 × 700px recommended</small>
+    </div>
+  </div>
+  <div class="pmod-body">
+    <h2 class="pmod-title">Children's Educational Planter</h2>
+    <div class="pmod-tags">
+      <span class="tag">Arduino</span><span class="tag">Sensor Selection</span><span class="tag">Wiring</span><span class="tag">3D Printing</span>
+    </div>
+    <div class="pmod-meta">
+      <div class="pmod-meta-item"><div class="pmod-meta-label">Role</div><div class="pmod-meta-val">Lead Engineer</div></div>
+      <div class="pmod-meta-item"><div class="pmod-meta-label">Timeline</div><div class="pmod-meta-val">1 month</div></div>
+      <div class="pmod-meta-item"><div class="pmod-meta-label">Category</div><div class="pmod-meta-val">Sustainability</div></div>
+    </div>
+    <div class="pmod-section">
+      <div class="pmod-section-title">Overview</div>
+      <div class="pmod-text">
+        <p>For my GEEN 1400 project for our sustainability topic, my group decided to create a educational planter for children, designed to be user friendly whilst teaching kids the important of sustainable gardening practices</p>
+        <p>The project utilized a screen to display fun graphics based on the plant's soil moisture content using a moisture sensor, running off an Arduino Leonardo. If the soil moisture was too low or high, a sad face was displayed, and if it was just right, a smiley face would show.</p>
+      </div>
+    </div>
+    <div class="pmod-section">
+      <div class="pmod-section-title">Images</div>
+      <div class="pmod-img-grid">
+        <div>
+          <div class="pmod-inline-img">
+            <img src="PlanterShield.jpg" alt="Shield">
+            <div class="pmod-img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg><span>Throughput Chart</span></div>
+          </div>
+          <p class="pmod-img-cap">Organized Arduino Shield</p>
+        </div>
+        <div>
+          <div class="pmod-inline-img">
+            <img src="PlanterScreen.jpg" alt="Screen">
+            <div class="pmod-img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><span>Cost Comparison</span></div>
+          </div>
+          <p class="pmod-img-cap">Graphics on Screen</p>
+        </div>
+      </div>
+    </div>
+    <div class="pmod-section">
+      <div class="pmod-section-title">Design Considerations</div>
+      <ul class="pmod-bullets">
+        <li>Have an approachable design for kids, including bright colors and fun graphics.</li>
+        <li>Be able to communicate soil moisture and plant health to user.</li>
+        <li>Easily manufacturable for mass production. Be resist to drops and rough handling that a preschooler would do.</li>
+        <li>Utilize a plant light to help photosynthesis in classrooms with UV protected windows.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
