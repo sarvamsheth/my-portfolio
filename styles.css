@@ -237,34 +237,14 @@
     .hero-fullbg.text-visible .hero-scroll-hint { opacity: 0; pointer-events: none; }
     .hero-scroll-hint::after { content: ''; width: 1px; height: 36px; background: var(--border); }
 
-    /* About section — slide from opposite sides */
-    .about-slide-left {
-      opacity: 0; transform: translateX(-72px);
-      transition: opacity .85s cubic-bezier(.16,1,.3,1), transform .85s cubic-bezier(.16,1,.3,1);
-    }
-    .about-slide-right {
-      opacity: 0; transform: translateX(72px);
-      transition: opacity .85s cubic-bezier(.16,1,.3,1), transform .85s cubic-bezier(.16,1,.3,1);
-      transition-delay: 0.12s;
-    }
-    .about-slide-left.slide-in { opacity: 1; transform: translateX(0); }
-    .about-slide-right.slide-in { opacity: 1; transform: translateX(0); }
-
-    /* Home — about band */
+    /* Home — about section: centered heading, full-width edge to edge */
     .home-about {
       background: var(--cream2);
       color: var(--green2);
-      padding: 5.5rem 3.5rem;
-      border-top: 1.5px solid var(--border);
+      padding: 5.5rem 0 2rem;
+      border-top: 1px solid rgba(184,212,196,.5);
     }
-    .home-about-inner {
-      max-width: 1080px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: start;
-    }
+    .home-about .page-header { max-width: 800px; padding: 0 3.5rem 3rem; }
     .home-about .section-eyebrow { color: var(--green-lt); }
     .home-about .page-title { color: var(--green2); }
     .home-about .page-title em { color: var(--green); }
@@ -275,22 +255,34 @@
       line-height: 1.9;
     }
     .about-body p + p { margin-top: 1.2rem; }
-    .about-facts { display: flex; flex-direction: column; gap: 0; }
-    .fact-row {
-      display: flex; gap: 1.4rem; align-items: flex-start;
-      padding: 1.4rem 0;
-      border-bottom: 1px solid var(--border);
+
+    /* Full-width alternating rows — no card/border, mirrors the Projects
+       zig-zag layout but wider and without the boxed styling */
+    .about-rows { max-width: 1360px; margin: 0 auto; padding: 0 3.5rem; }
+    .about-row {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 5rem;
+      align-items: center;
+      padding: 4.5rem 0;
+      border-bottom: 1px solid rgba(184,212,196,.4);
     }
-    .fact-row:first-child { padding-top: 0; }
-    .fact-num {
-      font-family: var(--serif);
-      font-size: 2.8rem;
-      color: var(--green);
-      line-height: 1;
-      min-width: 80px;
+    .about-row:last-child { border-bottom: none; }
+    .about-row.flip { direction: rtl; }
+    .about-row.flip > * { direction: ltr; }
+    .about-row-label {
+      font-family: var(--mono); font-size: .62rem; letter-spacing: .2em;
+      text-transform: uppercase; color: var(--green-lt); margin-bottom: 1.1rem;
     }
-    .fact-detail {}
-    .fact-label { font-family: var(--mono); font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: .35rem; }
+    .about-row-img {
+      aspect-ratio: 4/3;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      background: var(--cream);
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .about-row-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 
     /* ── Project slide-in from sides ── */
@@ -527,8 +519,11 @@
       .nav-links li button { padding: 0 .75rem; font-size: .63rem; }
       #page-home .hero { grid-template-columns: 1fr; padding: 3.5rem 1.5rem; gap: 2.5rem; }
       .hero-photo-wrap { max-width: 260px; }
-      .home-about { padding: 4rem 1.5rem; }
-      .home-about-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .home-about { padding: 4rem 0; }
+      .home-about .page-header { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .about-rows { padding: 0 1.5rem; }
+      .about-row { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 0; }
+      .about-row.flip { direction: ltr; }
       .page-header, .projects-list, .skills-body, .experience-body, .contact-body { padding-left: 1.5rem; padding-right: 1.5rem; }
       .project-item { grid-template-columns: 1fr; }
       .project-item.flip { direction: ltr; }
