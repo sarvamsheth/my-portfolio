@@ -1,25 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh"
-          content="0; url=https://www.sarvamsheth.com/">
-
-    <link rel="canonical"
-          href="https://www.sarvamsheth.com/">
-
-    <script>
-        window.location.replace("https://www.sarvamsheth.com/");
-    </script>
-
-    <title>Redirecting...</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sarvam Sheth — Engineering Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <p>
-        This website has moved.
-        <a href="https://www.sarvamsheth.com/">
-            Visit our new website
-        </a>
-    </p>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo" onclick="location.href='index.html'">Sarvam Sheth</span>
+  <ul class="nav-links">
+    <li><button onclick="location.href='index.html'" id="nav-index" class="active">Home</button></li>
+    <li><button onclick="location.href='projects.html'" id="nav-projects">Projects</button></li>
+    <li><button onclick="location.href='skills.html'" id="nav-skills">Skills</button></li>
+    <li><button onclick="location.href='experience.html'" id="nav-experience">Experience</button></li>
+    <li><button onclick="location.href='contact.html'" id="nav-contact">Contact</button></li>
+  </ul>
+</nav>
+
+<div class="page active" id="page-home">
+
+  <!-- Wrapper is taller than viewport — gives scroll room for sticky hero -->
+  <div class="hero-wrapper">
+    <div class="hero-fullbg" id="hero-sticky">
+
+      <!-- BACKGROUND IMAGE — replace placeholder with your photo -->
+      <div class="hero-bg-img">
+        <!--
+          TO ADD YOUR PHOTO:
+          Replace the entire .hero-bg-placeholder div below with:
+          <img src="your-photo.jpg" alt="Sarvam Sheth">
+        -->
+        <img src="bikeShort.jpg" alt="Sarvam Sheth">
+      </div>
+
+      <!-- Text content — appears on scroll -->
+      <div class="hero-content">
+        <h1 class="hero-title">Hi, I'm<br><em>Sarvam Sheth</em></h1>
+        <p class="hero-bio">
+          I'm a <strong>Junior Aerospace student at CU Boulder</strong>, designing reliable engineering 
+          solutions for aviation, motorsports, and space exploration.
+          I want to test my skills, collaborate with like-minded engineers, 
+          and challenge my diciplined problem-solving mindset.
+          <br>
+          Currently <strong>interning at SpaceX</strong> as a Mechanical Engineer for Fall 2026. 
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-solid" onclick="location.href='projects.html'">View My Work</button>
+          <button class="btn btn-solid" onclick="location.href='contact.html'">Get in Touch</button>
+        </div>
+      </div>
+
+      <div class="hero-scroll-hint" id="hero-scroll-hint">Scroll</div>
+    </div>
+  </div><!-- /hero-wrapper -->
+
+  <!-- About — centered heading + 3 alternating full-width rows -->
+  <div class="home-about" id="home-about">
+    <div class="page-header" style="text-align:center; border-bottom:none; padding-top:1rem;">
+      <h2 class="page-title">About Me</h2>
+    </div>
+
+    <div class="about-rows">
+
+      <div class="about-row">
+        <div class="about-row-text proj-slide-left">
+          <p class="about-row-label">Who I Am</p>
+          <div class="about-body">
+            <p>
+              I'm a disciplined learner who strives to experience as many things as possible. Whether its 
+              developing a new skill to diagnosing what's wrong with my scooter engine, 
+              I approach every problem with determination, curiosity, and passion for what I work on.
+            </p>
+            <p>
+              I'm seeking for engineering intern roles in aerospace/mechanical engineering.
+            </p>
+          </div>
+          <div style="margin-top:2rem">
+            <a class="btn btn-solid" href="Sarvam Sheth Resume November 2026.pdf">Download Resume →</a>
+          </div>
+        </div>
+        <div class="about-row-img proj-slide-right">
+          <div class="hero-bg-img">
+            <img src="Engine.jpeg" alt="Engine go Kaboom">
+          </div>
+        </div>
+      </div>
+
+      <div class="about-row flip">
+        <div class="about-row-img proj-slide-left">
+          <div class="hero-bg-img">
+            <img src="NYCFlight.jpg" alt="NYC Flight">
+          </div>
+        </div>
+        <div class="about-row-text proj-slide-right">
+          <p class="about-row-label">My Interests</p>
+          <div class="about-body">
+            <p>
+              Since I was 15, I have flown to amazing places. Now I have my Commercial License
+              with an Instrument Rating. My favorite trip is  going up the hudson at night,
+              where you are lower than most of the buildings off the wing.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-row">
+        <div class="about-row-text proj-slide-left">
+          <p class="about-row-label">What I Want to Work On</p>
+          <div class="about-body">
+            <p>
+              After seeing the success of Ingenuity and the rapid testing of Starship launch, 
+              people/robots need a way to transport things on Mars quick. I want to tie the knot
+              between my passion for aviation and space exploration by creating drones that could deliver
+              cargo and transport people across a colony.
+            </p>
+          </div>
+        </div>
+        <div class="about-row-img proj-slide-right">
+          <div class="hero-bg-img">
+            <img src="Shuttle.jpeg" alt="Space Shuttle">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /home -->
+
+<!-- ══════════════════════════════════════════
+     PROJECTS
+══════════════════════════════════════════ -->
+
+
+<footer>
+  <span>Sarvam Sheth &middot; Engineering Portfolio</span>
+  <span>Built with HTML</span>
+</footer>
+
+<script src="main.js"></script>
 </body>
 </html>
