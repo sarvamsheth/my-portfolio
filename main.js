@@ -1,12 +1,18 @@
+
 // ── Scroll reveal (runs on whichever page is loaded) ────────────────────────
 function triggerReveals() {
   // Standard reveal for generic elements
   const revObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); revObs.unobserve(e.target); }
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revObs.unobserve(e.target);
+      }
     });
   }, { threshold: 0.07 });
-  document.querySelectorAll('.reveal:not(.visible)').forEach(el => revObs.observe(el));
+
+  document.querySelectorAll('.reveal:not(.visible)')
+    .forEach(el => revObs.observe(el));
 
   // Project items — slide left/right halves in from sides
   const projObs = new IntersectionObserver(entries => {
@@ -17,8 +23,10 @@ function triggerReveals() {
       }
     });
   }, { threshold: 0.15 });
-  document.querySelectorAll('.proj-slide-left:not(.slide-in), .proj-slide-right:not(.slide-in)')
-    .forEach(el => projObs.observe(el));
+
+  document.querySelectorAll(
+    '.proj-slide-left:not(.slide-in), .proj-slide-right:not(.slide-in)'
+  ).forEach(el => projObs.observe(el));
 
   // Skill boxes — staggered pop-in
   const skillObs = new IntersectionObserver(entries => {
@@ -32,38 +40,24 @@ function triggerReveals() {
       }
     });
   }, { threshold: 0.1 });
-  document.querySelectorAll('.skills-boxes').forEach(el => skillObs.observe(el));
+
+  document.querySelectorAll('.skills-boxes')
+    .forEach(el => skillObs.observe(el));
 }
 
-// ── Home scroll-driven animations (only runs if #page-home exists) ─────────
+// ── Home hero scroll animation ──────────────────────────────────────────────
 let heroTextShown = false;
 
 function onScroll() {
-  const homePage = document.getElementById('page-home');
-  if (!homePage) return;
-
-  const scrollY = window.scrollY;
-  const vh = window.innerHeight;
   const heroEl = document.getElementById('hero-sticky');
-  const aboutEl = document.getElementById('home-about');
+  if (!heroEl) return;
 
-  // Text appears once user scrolls 10% of viewport
-  const textThreshold = vh * 0.10;
-  if (scrollY >= textThreshold && !heroTextShown) {
-    heroEl.classList.add('text-visible');
-    heroTextShown = true;
-  } else if (scrollY < textThreshold && heroTextShown) {
-    heroEl.classList.remove('text-visible');
-    heroTextShown = false;
-  }
+  const textThreshold = window.innerHeight * 0.10;
+  const shouldShowText = window.scrollY >= textThreshold;
 
-  // About section: slide in from sides when in view
-  if (aboutEl) {
-    const rect = aboutEl.getBoundingClientRect();
-    if (rect.top < vh * 0.85) {
-      aboutEl.querySelectorAll('.about-slide-left, .about-slide-right')
-        .forEach(el => el.classList.add('slide-in'));
-    }
+  if (shouldShowText !== heroTextShown) {
+    heroEl.classList.toggle('text-visible', shouldShowText);
+    heroTextShown = shouldShowText;
   }
 }
 
@@ -74,26 +68,41 @@ function openProject(id) {
   const backdrop = document.getElementById('modal-backdrop');
   const modal = document.getElementById('modal-' + id);
   if (!backdrop || !modal) return;
+
   backdrop.classList.add('open');
   modal.classList.add('open');
   modal.scrollTop = 0;
   document.body.style.overflow = 'hidden';
 }
+
 function closeProject() {
-  document.querySelectorAll('.proj-modal').forEach(m => m.classList.remove('open'));
+  document.querySelectorAll('.proj-modal')
+    .forEach(m => m.classList.remove('open'));
+
   const backdrop = document.getElementById('modal-backdrop');
   if (backdrop) backdrop.classList.remove('open');
+
   document.body.style.overflow = '';
 }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeProject(); });
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeProject();
+});
 
 // ── Init ─────────────────────────────────────────────────────────────────────
 setTimeout(() => {
-  document.querySelectorAll('.page').forEach(p => p.classList.add('page-entering'));
+  document.querySelectorAll('.page')
+    .forEach(p => p.classList.add('page-entering'));
+
   triggerReveals();
+  onScroll();
+
   // Show scroll hint after hero image loads (home page only)
   const hint = document.getElementById('hero-scroll-hint');
+
   if (hint) {
-    setTimeout(() => { hint.classList.add('hint-show'); }, 1600);
+    setTimeout(() => {
+      hint.classList.add('hint-show');
+    }, 1600);
   }
 }, 50);
