@@ -45,23 +45,11 @@ function triggerReveals() {
     .forEach(el => skillObs.observe(el));
 }
 
-// ── Home hero scroll animation ──────────────────────────────────────────────
-let heroTextShown = false;
-
-function onScroll() {
+// ── Home hero intro — box rises in on page load ─────────────────────────────
+function showHeroText() {
   const heroEl = document.getElementById('hero-sticky');
-  if (!heroEl) return;
-
-  const textThreshold = window.innerHeight * 0.10;
-  const shouldShowText = window.scrollY >= textThreshold;
-
-  if (shouldShowText !== heroTextShown) {
-    heroEl.classList.toggle('text-visible', shouldShowText);
-    heroTextShown = shouldShowText;
-  }
+  if (heroEl) heroEl.classList.add('text-visible');
 }
-
-window.addEventListener('scroll', onScroll, { passive: true });
 
 // ── Project modals (only relevant on projects.html) ─────────────────────────
 function openProject(id) {
@@ -86,7 +74,23 @@ function closeProject() {
 }
 
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeProject();
+  if (e.key === 'Escape') { closeProject(); toggleNav(false); }
+});
+
+// ── Phone menu (☰ button, shown on small screens only) ──────────────────────
+function toggleNav(force) {
+  const nav = document.querySelector('nav');
+  const btn = document.querySelector('.nav-toggle');
+  if (!nav || !btn) return;
+  const open = typeof force === 'boolean' ? force : !nav.classList.contains('nav-open');
+  nav.classList.toggle('nav-open', open);
+  btn.setAttribute('aria-expanded', open);
+  btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+}
+
+document.addEventListener('click', e => {
+  const nav = document.querySelector('nav');
+  if (nav && nav.classList.contains('nav-open') && !nav.contains(e.target)) toggleNav(false);
 });
 
 // ── Init ─────────────────────────────────────────────────────────────────────
@@ -95,7 +99,7 @@ setTimeout(() => {
     .forEach(p => p.classList.add('page-entering'));
 
   triggerReveals();
-  onScroll();
+  setTimeout(showHeroText, 350);
 
   // Show scroll hint after hero image loads (home page only)
   const hint = document.getElementById('hero-scroll-hint');

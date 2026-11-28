@@ -127,7 +127,7 @@
 
     /* Tall wrapper gives scroll room while hero is sticky */
     .hero-wrapper {
-      height: 175vh;
+      height: 100vh;
       position: relative;
     }
 
@@ -174,13 +174,15 @@
       max-width: 660px;
       padding: 2.5rem 2.75rem;
       border-radius: 28px;
-      background: rgba(244,240,230,0);
-      box-shadow: none;
-      transition: background .8s ease, box-shadow .8s ease;
-    }
-    .hero-fullbg.text-visible .hero-content {
       background: rgba(244,240,230,0.94);
       box-shadow: 0 24px 64px rgba(29,66,50,.16);
+      opacity: 0;
+      transform: translateY(120px);
+      transition: opacity .7s ease, transform 1s cubic-bezier(.22,.8,.3,1);
+    }
+    .hero-fullbg.text-visible .hero-content {
+      opacity: 1;
+      transform: translateY(0);
     }
     .hero-eyebrow {
       font-family: var(--mono);
@@ -216,7 +218,7 @@
       transition-delay: 0.34s;
     }
 
-    /* Text-visible state — triggered by JS on scroll */
+    /* Text-visible state — added by JS shortly after page load */
     .hero-fullbg.text-visible .hero-eyebrow,
     .hero-fullbg.text-visible h1.hero-title,
     .hero-fullbg.text-visible .hero-bio,
@@ -742,4 +744,64 @@
       position: absolute; top: 1.2rem; right: 1.6rem;
       font-family: var(--mono); font-size: .76rem; letter-spacing: .16em; text-transform: uppercase;
       color: rgba(244,240,230,.75);
+    }
+
+    /* ═══════════════ MOBILE FIXES ═══════════════ */
+    /* Never let anything push the page wider than the screen */
+    html, body { overflow-x: clip; }
+
+    /* ☰ menu button — hidden on larger screens */
+    .nav-toggle {
+      display: none;
+      width: 44px; height: 44px; margin-right: -10px;
+      background: none; border: none; cursor: pointer;
+      flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+    }
+    .nav-toggle span {
+      display: block; width: 22px; height: 2px; border-radius: 2px;
+      background: var(--green);
+      transition: transform .25s ease, opacity .2s ease;
+    }
+    nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+    nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Contact cards: let the long LinkedIn / email text wrap */
+    .contact-body > *, .contact-channel, .ch-meta { min-width: 0; }
+    .ch-val { overflow-wrap: anywhere; }
+
+    /* Tablets and phones: slide content up instead of in from the sides */
+    @media (max-width: 860px) {
+      .proj-slide-left, .proj-slide-right { transform: translateY(40px); }
+      .proj-slide-left.slide-in, .proj-slide-right.slide-in { transform: none; }
+    }
+
+    /* Phones: collapse the menu behind the ☰ button */
+    @media (max-width: 640px) {
+      nav { padding: 0 1.2rem; height: 56px; }
+      .nav-logo { font-size: 1.15rem; }
+      .nav-toggle { display: flex; }
+      .nav-links {
+        position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        background: var(--cream);
+        border-bottom: 1px solid rgba(184,212,196,.55);
+        box-shadow: 0 16px 32px rgba(29,66,50,.10);
+        padding: .4rem 0 .8rem;
+        opacity: 0; transform: translateY(-8px); pointer-events: none;
+        transition: opacity .2s ease, transform .2s ease;
+      }
+      nav.nav-open .nav-links { opacity: 1; transform: none; pointer-events: auto; }
+      .nav-links li button {
+        width: 100%; text-align: left;
+        height: 50px; line-height: 50px; padding: 0 1.4rem;
+        font-size: .82rem; letter-spacing: .14em;
+        border-bottom: none; border-left: 3px solid transparent;
+      }
+      .nav-links li button:hover { border-radius: 0; }
+      .nav-links li button.active { border-bottom: none; border-left-color: var(--green); background: var(--green-gl); }
+
+      /* Bigger tap area for "View project →" */
+      .proj-link { position: relative; font-size: .74rem; }
+      .proj-link::after { content: ''; position: absolute; inset: -14px -10px; }
     }
