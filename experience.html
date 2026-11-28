@@ -45,24 +45,34 @@
           - Collaborating with launch operations and flight control teams to test hardware and conduct observations on-site, turning our results into engineering improvements, decreasing time between launches and supporting rapid turnaround.<br>
         </div>
         </div>
-        <div class="tl-images">
+        <div class="tl-images tl-images--video">
           <div>
             <div class="tl-img-item">
               <img src="RocketGarden.jpeg" alt="photo">
             </div>
             <p class="tl-img-cap">Starship and Booster</p>
           </div>
-          <div>
-            <div class="tl-img-item">
-              <img src="Flight14.jpeg" alt="photo">
+          <!-- Video: drop a file named spacex-video.mp4 in this folder and it plays here.
+               Until then an animated placeholder shows instead. -->
+          <div class="tl-video-cell">
+            <div class="tl-video">
+              <video src="spacex-video.mp4" autoplay muted loop playsinline preload="auto"></video>
+              <div class="vp-controls">
+                <button class="vp-play" type="button" aria-label="Pause video">
+                  <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+                  <svg class="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>
+                </button>
+                <input class="vp-seek" type="range" min="0" max="1000" step="1" value="0" aria-label="Video position">
+                <span class="vp-time">0:00</span>
+              </div>
+              <div class="tl-video-ph" aria-hidden="true">
+                <div class="vp-stars"></div>
+                <div class="vp-trail"></div>
+                <div class="vp-rocket"><div class="vp-body"></div><div class="vp-flame"></div></div>
+                <div class="vp-ground"></div>
+                <span class="vp-label">Video coming soon</span>
+              </div>
             </div>
-            <p class="tl-img-cap">Watching Flight 14!</p>
-          </div>
-          <div>
-            <div class="tl-img-item">
-              <img src="FalconBooster.jpeg" alt="photo">
-            </div>
-            <p class="tl-img-cap">In Hawthorne for testing</p>
           </div>
           <div>
             <div class="tl-img-item">

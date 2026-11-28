@@ -327,6 +327,65 @@ function openFromHash() {
   });
 })();
 
+// ── Experience video: show it once the file loads, otherwise keep the placeholder ──
+document.querySelectorAll('.tl-video video').forEach(v => {
+  const box = v.closest('.tl-video');
+  const show = () => box.classList.add('has-video');
+  if (v.readyState >= 2) show();
+  else v.addEventListener('loadeddata', show, { once: true });
+
+  // Mini player: play/pause, drag to scrub, time
+  const btn = box.querySelector('.vp-play');
+  const seek = box.querySelector('.vp-seek');
+  const time = box.querySelector('.vp-time');
+  if (!btn || !seek) return;
+  const fmt = t => { t = Math.max(0, Math.floor(t || 0)); return Math.floor(t / 60) + ':' + String(t % 60).padStart(2, '0'); };
+  let scrubbing = false, wasPlaying = false;
+
+  const syncButton = () => {
+    box.classList.toggle('paused', v.paused);
+    btn.setAttribute('aria-label', v.paused ? 'Play video' : 'Pause video');
+  };
+  const syncBar = () => {
+    if (!scrubbing && v.duration) {
+      const f = v.currentTime / v.duration;
+      seek.value = Math.round(f * 1000);
+      seek.style.setProperty('--p', (f * 100).toFixed(2) + '%');
+    }
+    time.textContent = fmt(v.currentTime);
+  };
+  const tick = () => { syncBar(); if (!v.paused) requestAnimationFrame(tick); };
+
+  btn.addEventListener('click', e => { e.stopPropagation(); v.paused ? v.play() : v.pause(); });
+  v.addEventListener('play', () => { syncButton(); requestAnimationFrame(tick); });
+  v.addEventListener('pause', () => { syncButton(); syncBar(); });
+  v.addEventListener('timeupdate', syncBar);
+  v.addEventListener('loadedmetadata', syncBar);
+
+  seek.addEventListener('input', () => {
+    if (!scrubbing) { scrubbing = true; wasPlaying = !v.paused; v.pause(); }
+    const f = seek.value / 1000;
+    seek.style.setProperty('--p', (f * 100).toFixed(2) + '%');
+    if (v.duration) v.currentTime = f * v.duration;
+    time.textContent = fmt(v.currentTime);
+  });
+  seek.addEventListener('change', () => {
+    scrubbing = false;
+    if (wasPlaying) v.play();
+  });
+
+  // Phones/tablets (no hover): a tap shows the player for a few seconds
+  let hideTimer;
+  box.addEventListener('pointerdown', e => {
+    if (e.pointerType === 'mouse') return;
+    box.classList.add('show-controls');
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => box.classList.remove('show-controls'), 3500);
+  });
+
+  syncButton();
+});
+
 // ── Init ─────────────────────────────────────────────────────────────────────
 openFromHash();
 initCarousel();
