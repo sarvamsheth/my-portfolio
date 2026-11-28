@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sarvam Sheth — Engineering Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -63,6 +63,43 @@
     </div>
   </div><!-- /hero-wrapper -->
 
+  <!-- Selected work — project strip; each card opens that project on the Projects page -->
+  <section class="work-strip" id="work">
+    <div class="work-head">
+      <div>
+        <p class="section-eyebrow">Selected Work</p>
+        <h2 class="page-title">Recent <em>Projects</em></h2>
+      </div>
+      <div class="work-nav">
+        <button class="work-arrow" type="button" data-dir="-1" aria-label="Previous projects">&larr;</button>
+        <button class="work-arrow" type="button" data-dir="1" aria-label="Next projects">&rarr;</button>
+        <a class="work-all" href="projects.html">All projects &rarr;</a>
+      </div>
+    </div>
+    <div class="work-track" aria-label="Projects carousel">
+      <a class="work-card" href="projects.html#p0" style="--i:0">
+        <span class="work-label"><span class="work-name">Foam Glider</span><span class="work-cat">[ASEN 2502]</span></span>
+        <span class="work-img"><img src="glider.jpeg" alt="Foam Glider" loading="lazy"></span>
+      </a>
+      <a class="work-card" href="projects.html#p1" style="--i:1">
+        <span class="work-label"><span class="work-name">Pressure Sensor Array</span><span class="work-cat">[Buffs Racing]</span></span>
+        <span class="work-img"><img src="rake.jpeg" alt="Pressure Sensor Array" loading="lazy"></span>
+      </a>
+      <a class="work-card" href="projects.html#p2" style="--i:2">
+        <span class="work-label"><span class="work-name">Gravity Anomaly Satellite</span><span class="work-cat">[Research]</span></span>
+        <span class="work-img"><img src="globe.jpeg" alt="Gravity Anomaly Satellite" loading="lazy"></span>
+      </a>
+      <a class="work-card" href="projects.html#p3" style="--i:3">
+        <span class="work-label"><span class="work-name">2023 Season Robot</span><span class="work-cat">[FRC Robotics]</span></span>
+        <span class="work-img"><img src="robot.jpeg" alt="2023 Season Robot" loading="lazy"></span>
+      </a>
+      <a class="work-card" href="projects.html#p4" style="--i:4">
+        <span class="work-label"><span class="work-name">Interactive Planter</span><span class="work-cat">[GEEN 1400]</span></span>
+        <span class="work-img"><img src="planter.jpeg" alt="Interactive Planter" loading="lazy"></span>
+      </a>
+    </div>
+  </section>
+
   <!-- About — centered heading + 3 alternating full-width rows -->
   <div class="home-about" id="home-about">
     <div class="page-header" style="text-align:center; border-bottom:none; padding-top:1rem;">
@@ -81,7 +118,7 @@
               I approach every problem with determination, curiosity, and passion for what I work on.
             </p>
             <p>
-              I'm seeking for engineering intern roles in aerospace/mechanical engineering.
+              I'm seeking engineering intern roles in aerospace/mechanical engineering.
             </p>
           </div>
           <div style="margin-top:2rem">

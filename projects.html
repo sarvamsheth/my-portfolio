@@ -5,8 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projects — Sarvam Sheth</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    /* Arriving from a home project photo: keep that photo on screen (no flash)
+       until main.js moves it into place as this project's banner. */
+    try {
+      var z = sessionStorage.getItem('pf-zoom');
+      if (z && /^#p\d+$/.test(location.hash) && /^[\w.-]+$/.test(z)) {
+        document.documentElement.classList.add('arriving');
+        document.documentElement.style.background = '#f4f0e6 url("' + z + '") center / cover no-repeat';
+      }
+    } catch (e) {}
+  </script>
 </head>
 <body>
 
